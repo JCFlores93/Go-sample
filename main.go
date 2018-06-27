@@ -15,6 +15,7 @@ func main() {
 	lastName := "<Modificar>"
 	number := sum(50, 50)
 	a, b, c := getVariables()
+	f32, f64 := getFloat()
 	//println ==> line's jump
 	//fmt.Print("Ingresa tu nombre: ")
 	//Let us ask a value and use it.
@@ -27,6 +28,7 @@ func main() {
 	fmt.Println("Hola mundo")
 
 	fmt.Println(number, a, b, c)
+	fmt.Println(f32, f64)
 }
 
 func getName() string {
@@ -37,15 +39,15 @@ func getName() string {
 	return name
 }
 
-func getVariables() (int, int, int) {
-	var (
-		a = 1
-		b = 2
-		c = 3
-	)
-	return a, b, c
+func getVariables() (int, int32, int64) {
+	//2147000000 = max. value for int32
+	return 1, 2147000000, 211231231231231233
 }
 
 func sum(a int, b int) int {
 	return a + b
+}
+
+func getFloat() (float32, float64) {
+	return float32(0.1), float64(float32(0.1))
 }
