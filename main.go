@@ -36,6 +36,7 @@ func main() {
 	getArray()
 	getSlice()
 	ifTest()
+	forTest()
 }
 
 func getName() string {
@@ -91,5 +92,24 @@ func ifTest() {
 
 	if number2 := 3; number2 == 3 {
 		fmt.Println("Entró al condicional")
+	}
+}
+
+func forTest() {
+	//Doesn't exist while,
+	for i := 0; i < 5; i++ {
+		fmt.Println("[FOR] ", i)
+	}
+	c := 100
+	for c > 0 {
+		c -= 100
+		fmt.Println("[FOR] ", c)
+	}
+	s := 1000
+	for {
+		s--
+		if s == 0 {
+			fmt.Println("Termia el for 'infinito'")
+		}
 	}
 }
