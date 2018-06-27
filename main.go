@@ -32,7 +32,9 @@ func main() {
 	fmt.Println(f32, f64)
 	fmt.Println("Cadena con UTF8: ", stringUTF8)
 	fmt.Println(string("hola"[0]))
-	fmt.Print("Cantidad de letras que tiene Hola ==> ", len("hola"))
+	fmt.Println("Cantidad de letras que tiene Hola ==> ", len("hola"))
+	getArray()
+	getSlice()
 }
 
 func getName() string {
@@ -58,4 +60,20 @@ func getFloat() (float32, float64) {
 
 func getUnicode() string {
 	return "欢迎来到丛林!"
+}
+
+func getArray() {
+	//Arrays have an static space
+	var array1 [2]string
+	arr2 := [3]int{1, 2, 3}
+	array1[0] = "array"
+	array1[1] = "array2"
+	fmt.Println(array1, arr2)
+}
+
+func getSlice() {
+	//Slices are dynamic
+	var slice1 []string
+	slice1 = append(slice1, "mi", "slice", "1")
+	fmt.Println(slice1)
 }
