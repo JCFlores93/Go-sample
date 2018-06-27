@@ -16,6 +16,7 @@ func main() {
 	number := sum(50, 50)
 	a, b, c := getVariables()
 	f32, f64 := getFloat()
+	stringUTF8 := getUnicode()
 	//println ==> line's jump
 	//fmt.Print("Ingresa tu nombre: ")
 	//Let us ask a value and use it.
@@ -29,6 +30,9 @@ func main() {
 
 	fmt.Println(number, a, b, c)
 	fmt.Println(f32, f64)
+	fmt.Println("Cadena con UTF8: ", stringUTF8)
+	fmt.Println(string("hola"[0]))
+	fmt.Print("Cantidad de letras que tiene Hola ==> ", len("hola"))
 }
 
 func getName() string {
@@ -50,4 +54,8 @@ func sum(a int, b int) int {
 
 func getFloat() (float32, float64) {
 	return float32(0.1), float64(float32(0.1))
+}
+
+func getUnicode() string {
+	return "欢迎来到丛林!"
 }
