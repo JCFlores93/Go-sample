@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/JCFlores93/Go-sample/structs"
+	"github.com/JCFlores93/Go-sample/numbers"
 	// "github.com/JCFlores93/Go-sample/flow"
 	// "github.com/JCFlores93/Go-sample/name"
 	// "github.com/JCFlores93/Go-sample/numbers"
@@ -51,7 +51,12 @@ func main() {
 	strings2()*/
 
 	//fmt.Println(maps.GetMap("Freddy"))
-	structs.InterfaceTest()
+	//structs.InterfaceTest()
+	number, err := numbers.Sum("50", 50)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(number)
 }
 
 func forTest() {
