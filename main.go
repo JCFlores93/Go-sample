@@ -4,10 +4,11 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/JCFlores93/Go-sample/flow"
-	"github.com/JCFlores93/Go-sample/name"
-	"github.com/JCFlores93/Go-sample/numbers"
-	"github.com/JCFlores93/Go-sample/structs"
+	"github.com/JCFlores93/Go-sample/maps"
+	// "github.com/JCFlores93/Go-sample/flow"
+	// "github.com/JCFlores93/Go-sample/name"
+	// "github.com/JCFlores93/Go-sample/numbers"
+	// "github.com/JCFlores93/Go-sample/structs"
 )
 
 const helloWorld string = "Hola %s %s, bienvenido al fascinante mundo de GO \n"
@@ -19,7 +20,7 @@ const testConst = "Test"
 */
 func main() {
 	//name := getName()
-	firstName := name.GetName()
+	/*firstName := name.GetName()
 	//Declaration and assignment, Go infers the kind of var
 	lastName := "<Modificar>"
 	number := numbers.Sum(50, 50)
@@ -47,7 +48,9 @@ func main() {
 	flow.IfTest()
 	forTest()
 	flow.SwitchTest()
-	strings2()
+	strings2()*/
+
+	fmt.Println(maps.GetMap("Freddy"))
 }
 
 func forTest() {
