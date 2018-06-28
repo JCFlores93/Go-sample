@@ -3,21 +3,13 @@ package main
 import (
 	"fmt"
 	"strings"
+
+	"github.com/JCFlores93/Go-sample/structs"
 	// "github.com/JCFlores93/Go-sample/flow"
 	// "github.com/JCFlores93/Go-sample/name"
 	// "github.com/JCFlores93/Go-sample/numbers"
 	// "github.com/JCFlores93/Go-sample/structs"
 )
-
-type PlatziCourse struct {
-	Name   string
-	Slug   string
-	Skills []string
-}
-
-type PlatziCareer struct {
-	PlatziCourse
-}
 
 const helloWorld string = "Hola %s %s, bienvenido al fascinante mundo de GO \n"
 const testConst = "Test"
@@ -59,12 +51,7 @@ func main() {
 	strings2()*/
 
 	//fmt.Println(maps.GetMap("Freddy"))
-	platziCourse := PlatziCourse{Name: "Go", Slug: "go", Skills: []string{"1", "2"}}
-	platziCourse1 := new(PlatziCourse)
-	platziCourse1.Name = "Go1"
-	platziCourse1.Slug = "go1"
-	platziCourse1.Skills = []string{"backend1"}
-	fmt.Println(platziCourse)
+	structs.InterfaceTest()
 }
 
 func forTest() {

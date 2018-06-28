@@ -19,3 +19,25 @@ func GetSlice() {
 	slice1 = append(slice1, "mi", "slice", "1")
 	fmt.Println(slice1)
 }
+
+//a method of Platzicourse
+func (p PlatziCourse) Subscribe(name string) {
+	fmt.Printf("La persona %s se ha registrado al curso %s", name, p.Name)
+}
+
+//This is an struct
+type PlatziCourse struct {
+	Name   string
+	Slug   string
+	Skills []string
+}
+
+//add the struct of platzicourse
+type PlatziCareer struct {
+	PlatziCourse
+}
+
+//register a person to a career
+func (p PlatziCareer) Subscribe(name string) {
+	fmt.Printf("La persona %s se ha registrado a la carrera  %s", name, p.Name)
+}
