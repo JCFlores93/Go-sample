@@ -8,6 +8,7 @@ type Platzi interface {
 }
 
 func InterfaceTest() {
+	defer deferTest()
 	platziCourse := PlatziCourse{Name: "Go", Slug: "go", Skills: []string{"1", "2"}}
 	platziCareer := new(PlatziCareer)
 	platziCareer.Name = "GoCareer"
@@ -19,4 +20,9 @@ func InterfaceTest() {
 
 func callSubscribe(p Platzi) {
 	p.Subscribe("Jean")
+}
+
+//It start when the function has finished
+func deferTest() {
+	fmt.Println("La funcion Interface ha culminado")
 }
