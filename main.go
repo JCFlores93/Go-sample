@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"strings"
+	"time"
 	// "github.com/JCFlores93/Go-sample/flow"
 	// "github.com/JCFlores93/Go-sample/name"
 	// "github.com/JCFlores93/Go-sample/numbers"
@@ -55,7 +56,10 @@ func main() {
 	// 	panic(err)
 	// }
 	// fmt.Println(number)
-	pointerTest()
+	//pointerTest()
+	go forGo(500)
+	go forGo(400)
+	time.Sleep(10000 * time.Millisecond)
 }
 
 func forTest() {
@@ -104,4 +108,14 @@ func pointerTest() {
 //recibe una dirección de memoria
 func pointerModify(c *int) {
 	*c = 10
+}
+
+func helloGo(index int) {
+	fmt.Println("Hola soy un print en la ", index)
+}
+
+func forGo(n int) {
+	for i := 0; i < n; i++ {
+		go helloGo(i)
+	}
 }
