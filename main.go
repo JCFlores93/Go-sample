@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"strings"
-	"time"
 	// "github.com/JCFlores93/Go-sample/flow"
 	// "github.com/JCFlores93/Go-sample/name"
 	// "github.com/JCFlores93/Go-sample/numbers"
@@ -57,9 +56,10 @@ func main() {
 	// }
 	// fmt.Println(number)
 	//pointerTest()
-	go forGo(500)
-	go forGo(400)
-	time.Sleep(10000 * time.Millisecond)
+	// go forGo(500)
+	// go forGo(400)
+	// time.Sleep(10000 * time.Millisecond)
+	channels()
 }
 
 func forTest() {
@@ -118,4 +118,39 @@ func forGo(n int) {
 	for i := 0; i < n; i++ {
 		go helloGo(i)
 	}
+}
+
+func channels() {
+	ch := make(chan string)
+	//funciones anónimas o closures
+	go func() {
+		//cerramos el canal
+		defer close(ch)
+		// <- es la forma como los channels reciben los datos
+		ch <- "Hola channel"
+	}()
+	//si el canal está del lado izquierdo está recibiendo una info
+	//si el canal está del lado derecho está enviando una info
+	fmt.Println(<-ch)
+
+	ch1 := make(chan int)
+	go func() {
+		defer close(ch1)
+		ch1 <- 1
+		ch1 <- 2
+		ch1 <- 3
+		ch1 <- 4
+		ch1 <- 5
+	}()
+	for n := range ch1 {
+		fmt.Printf("%d\n", n)
+	}
+
+	ch2 := make(chan int, 2)
+	ch2 <- 1
+	ch2 <- 2
+	fmt.Println(<-ch2)
+	fmt.Println(<-ch2)
+	ch2 <- 3
+	fmt.Println(<-ch2)
 }
