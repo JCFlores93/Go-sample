@@ -3,8 +3,6 @@ package main
 import (
 	"fmt"
 	"strings"
-
-	"github.com/JCFlores93/Go-sample/numbers"
 	// "github.com/JCFlores93/Go-sample/flow"
 	// "github.com/JCFlores93/Go-sample/name"
 	// "github.com/JCFlores93/Go-sample/numbers"
@@ -52,11 +50,12 @@ func main() {
 
 	//fmt.Println(maps.GetMap("Freddy"))
 	//structs.InterfaceTest()
-	number, err := numbers.Sum("50", 50)
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println(number)
+	// number, err := numbers.Sum("50", 50)
+	// if err != nil {
+	// 	panic(err)
+	// }
+	// fmt.Println(number)
+	pointerTest()
 }
 
 func forTest() {
@@ -84,4 +83,25 @@ func strings2() {
 	fmt.Println(strings.ToLower(text))
 	fmt.Println(strings.Replace(text, "Hello", "Hola", -1))
 	fmt.Println(strings.Split(text, " "))
+}
+
+func pointerTest() {
+	a := 100
+	//creamos un puntero --> recibe una dirección de un espacio en memoria
+	var b *int
+	// & -> podmeos extrar la dirección en memoria de a
+	b = &a
+	// * -> extraemos el valor verdadero que está en esa dirección de memoria
+	fmt.Println("Sin modificar")
+	fmt.Println(a, *b)
+	fmt.Println(&a, b)
+	pointerModify(b)
+	fmt.Println("Después de modificar")
+	fmt.Println(a, *b)
+	fmt.Println(&a, b)
+}
+
+//recibe una dirección de memoria
+func pointerModify(c *int) {
+	*c = 10
 }
