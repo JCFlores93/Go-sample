@@ -8,6 +8,7 @@ type Platzi interface {
 }
 
 func InterfaceTest() {
+	//se ejecuta al final de la ejecución de la función
 	defer deferTest()
 	platziCourse := PlatziCourse{Name: "Go", Slug: "go", Skills: []string{"1", "2"}}
 	platziCareer := new(PlatziCareer)
